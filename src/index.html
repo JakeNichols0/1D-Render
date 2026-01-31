@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>1D Renderer</title>
+        <link href="style.css" type="text/css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="author" content="Supreme Ruler of the Universe, Jake Nichols">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>1D Renderer</h1>
+        <div class="screen" id="screen">
+            <img src="img.png" alt="screen" id="pic">
+        </div>
+        <p>To adjust the line of the plane which you are seeing, use the arrow keys or scroll.</p>
+        <p>To adjust the girth of the line, use page up and down.</p>
+        <form action="/upload" enctype="multipart/form-data" method="post">
+            <input type="file" name="upload" multiple="multiple" title="2D image"><br>
+            <input type="submit" value="Upload file">
+        </form>
+        <script src="script.js"></script>
+    </body>
+</html>

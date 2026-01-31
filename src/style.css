@@ -1,0 +1,27 @@
+html {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.screen, .screen img {
+    position: absolute;
+}
+
+.screen {
+    height: 1px;
+    width: 90%;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleY(50);
+}
+
+.screen img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0px 0px;
+}
+
+h1, p {
+    text-align: center;
+}

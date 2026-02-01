@@ -8,16 +8,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>1D Renderer</h1>
+        <div class="instructions">
+            <h1>1D Renderer</h1>
+            <p>To adjust the line of the plane which you are seeing, use the arrow keys or scroll.</p>
+            <p>To adjust the girth of the line, use page up and down.</p>
+            <form action="/upload" enctype="multipart/form-data" method="post">
+                <input type="file" name="upload" multiple="multiple" title="2D image" id="upload">
+                <p id="error"></p>
+                <input type="submit" value="Upload file">
+            </form>
+        </div>
         <div class="screen" id="screen">
             <img src="img.png" alt="screen" id="pic">
         </div>
-        <p>To adjust the line of the plane which you are seeing, use the arrow keys or scroll.</p>
-        <p>To adjust the girth of the line, use page up and down.</p>
-        <form action="/upload" enctype="multipart/form-data" method="post">
-            <input type="file" name="upload" multiple="multiple" title="2D image"><br>
-            <input type="submit" value="Upload file">
-        </form>
+        <div class="minimap" id="minimap">
+            <img src="img.png" alt="minimap">
+            <div id="current"></div>
+        </div>
+        <svg width="0" height="0" id="svg">
+            <defs>
+                <clipPath id="mask">
+                </clipPath>
+            </defs>
+        </svg>
         <script src="script.js"></script>
     </body>
 </html>

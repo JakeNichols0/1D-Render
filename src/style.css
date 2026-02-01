@@ -2,8 +2,16 @@ html {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-.screen, .screen img {
+input {
+    font: inherit;
+}
+
+.screen, .screen img, .minimap, .minimap img {
     position: absolute;
+}
+
+.screen, .minimap {
+    left: 50%;
 }
 
 .screen {
@@ -11,17 +19,37 @@ html {
     width: 90%;
     background-color: black;
     top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%) scaleY(50);
 }
 
-.screen img {
+.screen img, .minimap img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: 0px 0px;
 }
 
-h1, p {
+.minimap {
+    height: 100px;
+    width: 100px;
+    top: 100%;
+    transform: translate(-50%, -75%)
+}
+
+.minimap img {
+    clip-path: url(#mask);
+}
+
+.instructions {
     text-align: center;
+}
+
+#error {
+    color: red;
+}
+
+#current {
+    height: 1px;
+    background-color: red;
+    position: relative;
 }

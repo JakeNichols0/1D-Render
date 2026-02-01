@@ -4,6 +4,7 @@ html {
 
 input {
     font: inherit;
+    vertical-align: middle;
 }
 
 .screen, .screen img, .minimap, .minimap img {
@@ -16,10 +17,7 @@ input {
 
 .screen {
     height: 1px;
-    width: 90%;
-    background-color: black;
     top: 50%;
-    transform: translate(-50%, -50%) scaleY(50);
 }
 
 .screen img, .minimap img {
@@ -30,10 +28,7 @@ input {
 }
 
 .minimap {
-    height: 100px;
-    width: 100px;
-    top: 100%;
-    transform: translate(-50%, -75%)
+    top: 75%;
 }
 
 .minimap img {
@@ -52,4 +47,25 @@ input {
     height: 1px;
     background-color: red;
     position: relative;
+}
+
+input[type="submit"], #pseudoUpload label {
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    padding: 6px 12px;
+    background: white;
+    cursor: pointer;
+}
+
+#pseudoUpload {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#pseudoUpload label {
+    height: 100%;
+    width: 80px;
+    display: block;
 }

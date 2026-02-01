@@ -13,6 +13,9 @@
             <p>To adjust the line of the plane which you are seeing, use the arrow keys or scroll.</p>
             <p>To adjust the girth of the line, use page up and down.</p>
             <form action="/upload" enctype="multipart/form-data" method="post">
+                <div id="pseudoUpload">
+                    <label for="upload">Choose pictures</label>
+                </div>
                 <input type="file" name="upload" multiple="multiple" title="2D image" id="upload">
                 <p id="error"></p>
                 <input type="submit" value="Upload file">

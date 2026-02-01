@@ -5,7 +5,8 @@ let pic = document.getElementById('pic');
 let current = document.getElementById('current');
 let minimap = document.getElementById('minimap');
 let mask = document.getElementById('mask');
-let aspectRatio = pic.naturalWidth/pic.naturalHeight;
+let pseudoUpload = document.getElementById('pseudoUpload');
+let upload = document.getElementById('upload');
 let revealed = [];
 
 screen.style.width = pic.naturalWidth + "px";
@@ -13,9 +14,14 @@ screen.style.transform = `translate(-50%, -50%) scale(${window.innerWidth/pic.na
 
 minimap.style.height = pic.naturalHeight + "px";
 minimap.style.width = pic.naturalWidth + "px";
-minimap.style.transform = `translate(-50%, -75%) scale(${100/pic.naturalHeight})`;
+minimap.style.transform = `translate(-50%, -50%) scale(${100/pic.naturalHeight})`;
 
 current.style.height = pic.naturalHeight/100 + "px"
+
+pseudoUpload.style.width = upload.offsetWidth + "px";
+pseudoUpload.style.top = upload.getBoundingClientRect().top + "px";
+
+upload.style.height = upload.style.lineHeight = pseudoUpload.offsetHeight + "px";
 
 function move(x) {
     if(y+x <= 0 && y+x > -pic.naturalHeight) {
@@ -52,6 +58,7 @@ addEventListener('wheel', (e) => {
 
 addEventListener('resize', () => {
     screen.style.transform = `translate(-50%, -50%) scale(${window.innerWidth/pic.naturalWidth * 0.9}, ${height})`;
+    pseudoUpload.style.top = upload.getBoundingClientRect().top + "px";
 });
 
 function reveal(pixle, scroll=false) {
